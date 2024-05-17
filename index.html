@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom task</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button type="submit" id="capbtn">Capitilize</button>
+    <button type="submit" id="btn">Reverse word by word</button>
+    
+
+    <div class="output"></div>
+
+    <script>
+        let input = document.getElementById('input');
+        let capbtn=document.getElementById('capbtn');
+        let btn = document.getElementById('btn');
+        let output = document.getElementsByClassName('output')[0];
+
+        btn.addEventListener("click", () => {
+            let inputValue = input.value;
+            console.log(inputValue);
+            let res = reverseWords(inputValue);
+            output.innerHTML = `<h2>${res}</h2>`;
+        });
+        function reverseWords(sentence) {
+            return sentence.split(' ').reverse().join(' ');
+        }
+    </script>
+</body>
+
+</html>
